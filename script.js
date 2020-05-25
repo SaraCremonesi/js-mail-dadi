@@ -7,7 +7,6 @@ var mail =  document.getElementById('mail');
 var accedi = document.getElementById('accedi');
 var messaggio = document.getElementById('messaggio');
 var autorizzato = false;
-messaggio.innerHTML = 'ACCESSO NEGATO';
 
 accedi.addEventListener('click',
   function () {
@@ -16,8 +15,11 @@ accedi.addEventListener('click',
         autorizzato = true;
       }
     }
+    
     if (autorizzato = true) {
       messaggio.innerHTML = 'ACCESSO AUTORIZZATO';
+    } else {
+      messaggio.innerHTML = 'ACCESSO NEGATO';
     }
   }
 );
