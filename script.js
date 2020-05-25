@@ -28,3 +28,34 @@ accedi.addEventListener('click',
   }
 );
 // FINE ESERCIZIO MAIL
+
+
+// INIZIO ESERCIZIO DADI
+var generaButton = document.getElementById('genera');
+
+generaButton.addEventListener('click',
+  function() {
+  // Inizializzo le variabili ch mi occorrono
+  var randomUser = document.getElementById('random-user');
+  var randomComputer = document.getElementById('random-pc');
+  // Genero i numeri e il messaggio da stampare a schermo
+  var numeroRandomUser = Math.ceil(Math.random() * 6) + 1;
+  var numeroRandomComputer = Math.ceil(Math.random() * 6) + 1;
+  var vittoria = document.getElementById('vittoria');
+
+  // Stampo a schermo i numeri
+  randomUser.innerHTML = numeroRandomUser;
+  randomComputer.innerHTML = numeroRandomComputer;
+
+  // Stampo il messaggio
+  if (numeroRandomUser > numeroRandomComputer) {
+    vittoria.innerHTML = 'HAI VINTO!'
+  } else if (numeroRandomUser < numeroRandomComputer) {
+    vittoria.innerHTML = 'HAI PERSO'
+  } else {
+    vittoria.innerHTML = 'PAREGGIO'
+  }
+
+  }
+);
+// FINE ESERCIZIO DADI
