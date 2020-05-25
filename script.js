@@ -6,15 +6,18 @@ var listaMail = ['giuseppe@gmail.com' , 'marco@gmail.com' , 'mauro@gmail.com' , 
 var mail =  document.getElementById('mail');
 var accedi = document.getElementById('accedi');
 var messaggio = document.getElementById('messaggio');
+var autorizzato = false;
+messaggio.innerHTML = 'ACCESSO NEGATO';
 
 accedi.addEventListener('click',
   function () {
     for (i = 0; i < listaMail.length; i++) {
-      if (listaMail[i] === mail.value) {
-        messaggio.innerHTML = 'ACCESSO AUTORIZZATO';
-      } else {
-        messaggio.innerHTML = 'ACCESSO NEGATO';
+      if (listaMail[i] === mail) {
+        autorizzato = true;
       }
+    }
+    if (autorizzato = true) {
+      messaggio.innerHTML = 'ACCESSO AUTORIZZATO';
     }
   }
 );
