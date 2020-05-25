@@ -4,18 +4,22 @@ var listaMail = ['giuseppe@gmail.com' , 'marco@gmail.com' , 'mauro@gmail.com' , 
 
 // Inizializzo le variabili ch mi occorrono per la funzione click
 var accedi = document.getElementById('accedi');
-var messaggio = document.getElementById('messaggio');
-var autorizzato = false;
 
 accedi.addEventListener('click',
   function () {
+    // Inizializzo le variabili ch mi occorrono per il ciclo for
+    var messaggio = document.getElementById('messaggio');
+    var autorizzato = false;
     var mail =  document.getElementById('mail');
+
+    // Inizio il ciclo for
     for (i = 0; i < listaMail.length; i++) {
       if (listaMail[i] === mail.value) {
         autorizzato = true;
       }
     }
 
+    // Stampo il messaggio di autorizzazione o negazione
     if (autorizzato === true) {
       messaggio.innerHTML = 'ACCESSO AUTORIZZATO';
     } else {
@@ -24,21 +28,3 @@ accedi.addEventListener('click',
   }
 );
 // FINE ESERCIZIO MAIL
-
-// INIZIO ESERCIZIO DADI
-// Inizializzo le variabili per l'assegnazione di valori casuali
-
-var generaButton = document.getElementById('genera');
-
-generaButton.addEventListener('click',
-  function() {
-  var randomUser = document.getElementById('random-user');
-  var randomComputer = document.getElementById('random-pc');
-  var numeroRandomUser = Math.ceil(Math.random() * 6) + 1;
-  var numeroRandomComputer = Math.ceil(Math.random() * 6) + 1;
-
-    randomUser.innerHTML = numeroRandomUser.value;
-    randomComputer.innerHTML = numeroRandomComputer.value;
-  }
-);
-// FINE ESERCIZIO DADI
